@@ -1,0 +1,10 @@
+{
+    "autoload": {
+      "psr-4": {
+       "MVC\\":"app"
+      }
+     },
+    "require": {
+        "rakit/validation": "^1.4"
+    }
+}
