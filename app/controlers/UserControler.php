@@ -2,6 +2,7 @@
 
 namespace MVC\controlers;
 use MVC\core\Controler;
+use MVC\core\Helper;
 use MVC\core\Session;
 use MVC\models\UserModel;
 use Rakit\Validation\Validator;
@@ -52,18 +53,17 @@ class UserControler extends Controler{
               
               Session::set('userData',$data);  
         
-              $homeControler=new HomeControler();
-              call_user_func_array([$homeControler,'home'],[]);      
+             Helper::redirct("Home\home");
 
             }else{
             
-              header('LOCATION: login');
+            Helper::redirct("User\login");
 
             }
 
            }else{
            
-            header("LOCATION: login");
+            Helper::redirct("User\login");
 
            }
  
@@ -97,22 +97,22 @@ class UserControler extends Controler{
         
         if($queryCheck){
               
-           header("LOCATION: login");
+            Helper::redirct("User\login");
 
         }else{
     
-           header("LOCATION: register");
+            Helper::redirct("User\register");
 
         }
 
     }else{
   
-        header('LOCATION: register');
+        Helper::redirct("User\register");
 
     }
     }else{
 
-        header('LOCATION: register');
+        Helper::redirct("User\register");
     }
 }//end postRegister
 
